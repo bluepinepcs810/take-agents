@@ -20,3 +20,9 @@
   resize: vertical;
   height: 5rem;
 }
+
+.join-container input {
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 5px 10px;
+}

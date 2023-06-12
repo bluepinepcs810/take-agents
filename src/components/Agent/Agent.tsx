@@ -63,7 +63,7 @@ export const Agent: React.FC = () => {
           {agent.reviews?.map((review) => (
             <div className="review" key={review.id}>
               <p>
-                <span>{review.firstName}</span> <span>{review.lastName}</span>
+                <span className="first-name">{review.firstName}</span> <span className="last-name">{review.lastName}</span>
               </p>
               <p>{review.content}</p>
             </div>
@@ -74,7 +74,7 @@ export const Agent: React.FC = () => {
             onSubmit={handleReviewSubmit}
           />
         </div>
-        <Link to="/">See All Agents</Link>
+        <Link to="/" className="btn">See All Agents</Link>
       </div>
     </div>
   );

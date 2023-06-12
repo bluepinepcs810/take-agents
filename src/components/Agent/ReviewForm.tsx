@@ -1,5 +1,6 @@
 import React from "react";
 import { IReview } from "../../types/Review";
+import "./ReviewForm.css";
 
 export const ReviewForm: React.FC<{
   value: IReview;
@@ -50,7 +51,7 @@ export const ReviewForm: React.FC<{
           }
         />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" className="btn">Submit</button>
     </form>
   );
 };

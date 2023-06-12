@@ -31,3 +31,27 @@
 .last-name {
   font-size: 20px;
 }
+
+.review-form p {
+  font-size: 30px;
+}
+
+.review-form label {
+  margin-right: 10px;
+}
+
+.review-form input {
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.review-form textarea {
+  resize: vertical;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}

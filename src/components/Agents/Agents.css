@@ -5,7 +5,31 @@
 }
 
 .agents-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.btn {
+  background-color: #9442ff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  margin-top: 20px;
+}
+.search-btn {
+  background-color: #9442ff;
+  color: white;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 0 8px 8px 0;
+  border: none;
+
+}
+.search-input {
+  padding: 8px;
 }

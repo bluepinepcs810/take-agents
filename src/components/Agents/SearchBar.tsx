@@ -9,10 +9,11 @@ export const SearchBar: React.FC<{
     <div>
       <input
         type="text"
+        className="search-input"
         value={value}
         onChange={({ target: { value } }) => onChange(value)}
       />
-      <button type="button" onClick={onSearch}>
+      <button className="search-btn" type="button" onClick={onSearch}>
         Search
       </button>
     </div>
