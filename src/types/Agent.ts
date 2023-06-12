@@ -1,3 +1,5 @@
+import { IReview } from "./Review";
+
 export interface IAgent {
   id: string;
   firstName: string;
@@ -7,6 +9,7 @@ export interface IAgent {
   address: string;
   practiceAreas: string;
   aboutMe: string;
+  reviews?: IReview[];
 }
 
 export const DEFAULT_AGENT_MODEL: IAgent = {

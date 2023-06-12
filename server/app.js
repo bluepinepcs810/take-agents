@@ -1,5 +1,5 @@
 const express = require("express");
-const { Agent } = require("./model");
+const { Agent, Review } = require("./model");
 const { Sequelize, Op } = require("sequelize");
 
 const app = express();
@@ -16,9 +16,12 @@ app.get("/agents", async (req, res, next) => {
           [Op.like]: `%${q.trim()}%`,
         },
       },
+      include: "reviews",
     });
   } else {
-    agents = await Agent.findAll();
+    agents = await Agent.findAll({
+      include: "reviews",
+    });
   }
 
   return res.json(agents);
@@ -26,7 +29,7 @@ app.get("/agents", async (req, res, next) => {
 
 app.get("/agents/:id", async (req, res, next) => {
   const { id } = req.params;
-  const agent = await Agent.findOne({ where: { id } });
+  const agent = await Agent.findOne({ where: { id }, include: "reviews" });
   if (!agent) {
     return res.status(404);
   }
@@ -36,6 +39,20 @@ app.get("/agents/:id", async (req, res, next) => {
 app.post("/agents", async (req, res, next) => {
   const agent = await Agent.create(req.body);
   return res.json(agent);
+});
+
+app.post("/agents/:id/review", async (req, res, next) => {
+  const { id } = req.params;
+  const agent = await Agent.findOne({ where: { id } });
+  if (!agent) {
+    return res.status(404);
+  }
+  const review = await Review.create({
+    ...req.body,
+    agentId: agent.id,
+  });
+
+  return res.json(review);
 });
 
 module.exports = app;
