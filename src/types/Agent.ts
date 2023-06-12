@@ -5,6 +5,17 @@ export interface IAgent {
   photoUrl: string;
   agentLicence: string;
   address: string;
-  practiceAreas: string[];
+  practiceAreas: string;
   aboutMe: string;
 }
+
+export const DEFAULT_AGENT_MODEL: IAgent = {
+  id: "",
+  firstName: "",
+  lastName: "",
+  photoUrl: "",
+  agentLicence: "",
+  address: "",
+  practiceAreas: "",
+  aboutMe: "",
+};

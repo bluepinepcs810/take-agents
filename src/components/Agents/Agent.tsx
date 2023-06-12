@@ -1,11 +1,11 @@
 import type { FC } from "react";
+import { Link } from "react-router-dom";
 import { IAgent } from "../../types/Agent";
-
-import './Agent.css'
+import "./Agent.css";
 
 const Agent: FC<{ agent: IAgent }> = ({ agent }) => {
   return (
-    <div className="container">
+    <Link to={`/agents/${agent.id}`} className="container">
       <header>
         <div className="avatar-holder">
           <img src={agent.photoUrl} className="avatar" alt={agent.firstName} />
@@ -23,7 +23,7 @@ const Agent: FC<{ agent: IAgent }> = ({ agent }) => {
           </div>
         </div>
       </footer>
-    </div>
+    </Link>
   );
 };
 

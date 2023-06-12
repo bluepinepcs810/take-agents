@@ -1,12 +1,13 @@
 import type { FC } from "react";
 import "./App.css";
 
-import Agents from "../Agents/Agents";
+import { RouterProvider } from "react-router-dom";
+import { router } from "../../lib/router";
 
 const App: FC = () => {
   return (
     <div className="app">
-      <Agents />
+      <RouterProvider router={router} />
     </div>
   );
 };
